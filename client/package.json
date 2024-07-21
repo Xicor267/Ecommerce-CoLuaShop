@@ -1,4 +1,5 @@
 {
+  "homepage": "https://xicor267.github.io/Ecommerce-CoLuaShop",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "antd": "^5.19.3",
+    "gh-pages": "^6.1.1",
     "postcss-scss": "^4.0.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -22,6 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
