@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Ecommerce-CoLuaShop/static/css/main.6dcc89ab.css",
+    "main.js": "/Ecommerce-CoLuaShop/static/js/main.788c5bb5.js",
+    "static/js/453.419a5d54.chunk.js": "/Ecommerce-CoLuaShop/static/js/453.419a5d54.chunk.js",
+    "static/media/avatar.png": "/Ecommerce-CoLuaShop/static/media/avatar.ce53b30362001ef2ba84.png",
+    "index.html": "/Ecommerce-CoLuaShop/index.html",
+    "main.6dcc89ab.css.map": "/Ecommerce-CoLuaShop/static/css/main.6dcc89ab.css.map",
+    "main.788c5bb5.js.map": "/Ecommerce-CoLuaShop/static/js/main.788c5bb5.js.map",
+    "453.419a5d54.chunk.js.map": "/Ecommerce-CoLuaShop/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6dcc89ab.css",
+    "static/js/main.788c5bb5.js"
+  ]
+}
