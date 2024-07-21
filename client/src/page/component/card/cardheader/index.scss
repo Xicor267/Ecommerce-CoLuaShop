@@ -1,0 +1,21 @@
+.card-header-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    .card-header-icon {
+        font-size: 18px;
+        color: #1677ff;
+    }
+    .card-header-title {
+        width: 200px;
+        color: #909090;
+        cursor: pointer;
+
+        &:hover {
+            color: #1677ff;
+            fill: #1677ff;
+        }
+    }
+}

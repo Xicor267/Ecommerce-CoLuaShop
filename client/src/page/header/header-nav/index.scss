@@ -1,0 +1,22 @@
+.header-nav {
+    background: #f5f5f5;
+    padding: 8px 0;
+
+    .header-nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .header-nav-row {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        .header-nav-dropdown {
+            width: 150px;
+        }
+    }
+}

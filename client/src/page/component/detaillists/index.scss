@@ -1,0 +1,14 @@
+.detail-list-wrap {
+    color: #181818;
+    text-transform: capitalize;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        color: #1677ff;
+        fill: #1677ff;
+        
+    }
+}
