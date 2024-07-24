@@ -45,7 +45,9 @@ export const Discount: FunctionComponent<IDiscount> = (props) => {
                                         title={item.title}
                                         price={item.price}
                                         discount={item.discount}
+                                        discountPercent={item.discountPercent}
                                         time={getTimeDiscount}
+                                        hasDiscountTime
                                     />
                                 );
                             })}

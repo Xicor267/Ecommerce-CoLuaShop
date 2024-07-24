@@ -40,10 +40,8 @@
         flex-direction: row;
         justify-content: flex-start;
         gap: 8px;
-        // width: calc((100% / 4) - 8px);
-
+        
         .cardbrand-image {
-            // width: 100%;
             width: calc((100% / 4) - 8px);
             height: 150px;
             background-color: #fff;

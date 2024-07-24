@@ -8,11 +8,8 @@
     padding-left: 15px;
     padding-right: 15px;
 
-    .content-column-first {
-        flex: 2;
-    }
-
-    .content-column-second {
-        flex: 8;
+    .content-right {
+        padding-left: 24px;
+        box-sizing: border-box;
     }
 }

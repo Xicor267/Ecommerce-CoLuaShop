@@ -14,7 +14,7 @@ export const CardBrand: FunctionComponent<ICardBrand> = (props) => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             handleNextClick();
-        }, 3000);
+        },4000);
 
         return () => clearInterval(intervalId);
     }, []);

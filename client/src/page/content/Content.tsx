@@ -8,6 +8,8 @@ import { Col, Row } from "antd";
 import { Owner } from "./owner";
 import { FollowUs } from "./followus";
 import { OurBrands } from "./ourbrands";
+import { TrendingProduct } from "./trendingproduct";
+import { CarouselOne } from "./carousel/carouselone";
 
 interface IContent {
 
@@ -34,7 +36,17 @@ export const Content: FunctionComponent<IContent> = (props) => {
                         <FollowUs />
                     </div>
                 </Col>
-                <Col span={18}>col-12</Col>
+                <Col className="content-right" span={18}>
+                    <div className="content-carousel">
+                        <CarouselCustom />
+                    </div>
+                    <div className="content-trending-product">
+                        <TrendingProduct />
+                    </div>
+                    <div className="content-carousel-one">
+                        <CarouselOne />
+                    </div>
+                </Col>
             </Row>
             <Row className="content-our-brands">
                 <Col span={24}>
