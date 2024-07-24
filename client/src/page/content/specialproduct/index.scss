@@ -1,27 +1,27 @@
-.trendingproduct-container {
+.spacialproduct-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 24px;
 
-    .trendingproduct-header {
+    .spacialproduct-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 9px;
 
-        .trendingproduct-buttons-title {
+        .spacialproduct-buttons-title {
             font-size: 17px;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .trendingproduct-buttons {
+        .spacialproduct-buttons {
             display: flex;
             gap: 10px;
 
-            .trendingproduct-buttons-icon {
+            .spacialproduct-buttons-icon {
                 cursor: pointer;
                 font-size: 20;
 
@@ -33,13 +33,13 @@
         }
     }
 
-    .trendingproduct-all-card {
+    .spacialproduct-all-card {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 15px;
 
-        .trendingproduct-card {
+        .spacialproduct-card {
             position: relative;
             flex-basis: calc(33.33% - 10px);
             box-sizing: border-box;

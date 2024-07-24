@@ -10,6 +10,7 @@ import { FollowUs } from "./followus";
 import { OurBrands } from "./ourbrands";
 import { TrendingProduct } from "./trendingproduct";
 import { CarouselOne } from "./carousel/carouselone";
+import { SpecialProduct } from "./specialproduct";
 
 interface IContent {
 
@@ -45,6 +46,9 @@ export const Content: FunctionComponent<IContent> = (props) => {
                     </div>
                     <div className="content-carousel-one">
                         <CarouselOne />
+                    </div>
+                    <div className="content-special-product">
+                        <SpecialProduct />
                     </div>
                 </Col>
             </Row>

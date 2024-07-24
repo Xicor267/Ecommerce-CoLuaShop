@@ -1,16 +1,16 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import "./index.scss";
 import { getCardProductItem } from "../discount/items";
 import { CardProduct } from "../../component/card/cardproducts";
 import { CgArrowLeftR, CgArrowRightR } from "react-icons/cg";
+import "./index.scss";
 
-interface ITrendingProduct {
+interface ISpecialProduct {
 
 }
 
-export const TrendingProduct: FunctionComponent<ITrendingProduct> = (props) => {
+export const SpecialProduct: FunctionComponent<ISpecialProduct> = (props) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const perPage = 6;
+    const perPage = 3;
 
     const handlePrevClick = () => {
         setCurrentPage((prev) => (prev - 1 + getCardProductItem.length) % getCardProductItem.length);
@@ -28,18 +28,18 @@ export const TrendingProduct: FunctionComponent<ITrendingProduct> = (props) => {
         : [...getCardProductItem.slice(startIndex), ...getCardProductItem.slice(0, endIndex)];
 
     return (
-        <div className="trendingproduct-container">
-            <div className="trendingproduct-header">
-                <div className="trendingproduct-buttons-title">{"Trending Product"}</div>
-                <div className="trendingproduct-buttons">
-                    <CgArrowLeftR onClick={handlePrevClick} className="trendingproduct-buttons-icon" fontSize={20} />
-                    <CgArrowRightR onClick={handleNextClick} className="trendingproduct-buttons-icon" fontSize={20} />
+        <div className="spacialproduct-container">
+            <div className="spacialproduct-header">
+                <div className="spacialproduct-buttons-title">{"Special Product"}</div>
+                <div className="spacialproduct-buttons">
+                    <CgArrowLeftR onClick={handlePrevClick} className="spacialproduct-buttons-icon" fontSize={20} />
+                    <CgArrowRightR onClick={handleNextClick} className="spacialproduct-buttons-icon" fontSize={20} />
                 </div>
             </div>
-            <div className="trendingproduct-all-card">
+            <div className="spacialproduct-all-card">
                 {currentItem.map((item, index) => {
                     return (
-                        <div className="trendingproduct-card">
+                        <div className="spacialproduct-card">
                             <CardProduct
                                 key={index}
                                 image={item.image}

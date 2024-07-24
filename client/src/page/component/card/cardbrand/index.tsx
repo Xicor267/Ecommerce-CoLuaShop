@@ -20,16 +20,19 @@ export const CardBrand: FunctionComponent<ICardBrand> = (props) => {
     }, []);
 
     const handlePrevClick = () => {
-        setCurrentPage((prev) => (prev - 1 + Math.ceil(props.item.length / props.perPage)) % Math.ceil(props.item.length / props.perPage));
+        setCurrentPage((prev) => (prev - 1 + props.item.length) % props.item.length);
     };
 
     const handleNextClick = () => {
-        setCurrentPage((prev) => (prev + 1) % Math.ceil(props.item.length / props.perPage));
+        setCurrentPage((prev) => (prev + 1) % props.item.length);
     };
 
-    const startIndex = currentPage * props.perPage;
-    const endIndex = startIndex + props.perPage;
-    const currentItem = props.item.slice(startIndex, endIndex);
+    const startIndex = currentPage;
+    const endIndex = (startIndex + props.perPage) % props.item.length;
+    
+    const currentItem = startIndex < endIndex 
+        ? props.item.slice(startIndex, endIndex) 
+        : [...props.item.slice(startIndex), ...props.item.slice(0, endIndex)];
 
 
     return (
