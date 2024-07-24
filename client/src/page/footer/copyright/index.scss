@@ -1,0 +1,23 @@
+.copyright-container {
+    text-align: center;
+    margin: 14px 90px 0 90px;
+
+    .copyright-text {}
+
+    .copyright-icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+
+        .copyright-icon-pay {
+            cursor: pointer;
+
+            &:hover {
+                color: #1677ff;
+                fill: #1677ff;
+            }
+        }
+    }
+}

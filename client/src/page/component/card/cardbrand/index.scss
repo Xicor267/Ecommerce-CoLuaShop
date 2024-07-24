@@ -1,0 +1,55 @@
+.cardbrand-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgba(5, 5, 5, 0.06);
+    border-radius: 8px;
+    background: #f8f8f8;
+
+    .cardbrand-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .cardbrand-buttons-title {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cardbrand-buttons {
+            display: flex;
+            gap: 10px;
+
+            .cardbrand-buttons-icon {
+                cursor: pointer;
+                font-size: 20;
+
+                &:hover {
+                    color: #1677ff;
+                    fill: #1677ff;
+                }
+            }
+        }
+    }
+
+    .cardbrand-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 8px;
+        // width: calc((100% / 4) - 8px);
+
+        .cardbrand-image {
+            // width: 100%;
+            width: calc((100% / 4) - 8px);
+            height: 150px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #999;
+        }
+    }
+
+}

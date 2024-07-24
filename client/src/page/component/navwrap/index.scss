@@ -19,21 +19,12 @@
             display: flex;
             gap: 10px;
 
-            .navigation-buttons-title {
-                color: #181818;
-                font-size: 17px;
-                font-weight: 600;
-                text-transform: uppercase;
-            }
-
-            .navigation-buttons button {
-                background-color: #f0f0f0;
-                border: 1px solid #ccc;
-                padding: 5px 10px;
+            .navigation-buttons-icon {
                 cursor: pointer;
 
-                .navigation-buttons button:hover {
-                    background-color: #e0e0e0;
+                &:hover {
+                    color: #1677ff;
+                    fill: #1677ff;
                 }
             }
         }

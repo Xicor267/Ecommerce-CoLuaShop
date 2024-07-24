@@ -3,11 +3,11 @@ import avatarLogo from "../../assets/image/avatar.png";
 import "./Header.scss";
 import Search from 'antd/es/input/Search';
 import { Select } from 'antd';
-import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import { DetailLists } from '../component/detaillists';
 import { getCategoryItem, getService } from './items';
 import { DropdownCustom } from '../component/dropdown';
 import { useLanguage } from '../../locales/locale';
+import { FaRegUserCircle, FaShoppingCart } from 'react-icons/fa';
 
 interface IHeader {
 
@@ -47,11 +47,11 @@ export const Header: FunctionComponent<IHeader> = (props) => {
                     <div className="header-item">
                         <div className="header-icon">
                             <div className="header-icon-title" style={{ width: 88 }}>
-                                <UserOutlined style={{ fontSize: 35 }} />
+                                <FaRegUserCircle style={{ fontSize: 35 }} />
                                 <div className="header-icon-text">{i18n("page.header.myAccount")}</div>
                             </div>
                             <div className="header-icon-title">
-                                <ShoppingCartOutlined style={{ fontSize: 35 }} />
+                                <FaShoppingCart style={{ fontSize: 35 }} />
                                 <span className="header-icon-count">10</span>
                                 <div className="header-icon-text">{i18n("page.header.cart")}</div>
                             </div>

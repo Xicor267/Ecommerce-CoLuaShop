@@ -1,0 +1,39 @@
+.cardfooter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .cardfooter-title {
+        margin-bottom: 8px;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .cardfooter-icon {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        // width: calc(100% / 4);
+
+        .cardfooter-desc {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+            cursor: pointer;
+
+            .cardfooter-desc-url {
+                text-decoration: none;
+                color: #181818;
+
+                &:hover {
+                    color: #1677ff;
+                    fill: #1677ff;
+                }
+            }
+        }
+    }
+}

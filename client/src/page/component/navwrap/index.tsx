@@ -1,4 +1,5 @@
 import React, { FunctionComponent, ReactNode, useState } from 'react';
+import { CgArrowLeftR, CgArrowRightR } from "react-icons/cg";
 import "./index.scss";
 
 interface IPaginationHeader {
@@ -28,8 +29,8 @@ export const PaginationHeader: FunctionComponent<IPaginationHeader> = (props) =>
             <div className="title-navigation-header">
                 <div className="navigation-buttons-title">{props.title}</div>
                 <div className="navigation-buttons">
-                    <button onClick={handlePrevClick}>{"<"}</button>
-                    <button onClick={handleNextClick}>{">"}</button>
+                    <CgArrowLeftR onClick={handlePrevClick} className="navigation-buttons-icon" fontSize={20}/>
+                    <CgArrowRightR onClick={handleNextClick} className="navigation-buttons-icon" fontSize={20}/>
                 </div>
             </div>
             <div className="title-navigation-content">
