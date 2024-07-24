@@ -1,28 +1,28 @@
 const getService = [
     {
-        title: "Contact"
+        title: "page.header.contact"
     },
     {
-        title: "Sitemap"
+        title: "page.header.sitemap"
     },
     {
-        title: "Special"
+        title: "page.header.special"
     },
     {
-        title: "Best Seller"
+        title: "page.header.bestSeller"
     },
     {
-        title: " New Arrivals"
+        title: "page.header.newArrivals"
     },
     {
-        title: "Gifts"
+        title: "page.header.gifts"
     },
 ];
 
 const getLanguageHeaderItem = [
     {
         value: "vi",
-        description: "Vietnamese",
+        description: "Vienamese",
     },
     {
         value: "en",
@@ -36,6 +36,53 @@ const getLanguageHeaderItem = [
         value: "ja",
         description: "Japanese",
     },
-]
+];
 
-export { getService, getLanguageHeaderItem };
+const getCategoryItem = [
+    {
+        value: "0",
+        description: "page.header.biaHoSo"
+    },
+    {
+        value: "1",
+        description: "page.header.butThuoc"
+    }, 
+    {
+        value: "2",
+        description: "page.header.so"
+    }, 
+    {
+        value: "3",
+        description: "page.header.bangKeo"
+    }, 
+    {
+        value: "4",
+        description: "page.header.bangTenDayDeo"
+    }, 
+    {
+        value: "5",
+        description: "page.header.keTaiLieu"
+    }, 
+    {
+        value: "6",
+        description: "page.header.hopDauMucDau"
+    }, 
+    {
+        value: "7",
+        description: "page.header.hinhDanSticker"
+    }, 
+    {
+        value: "8",
+        description: "page.header.doChoiTreEm"
+    }, 
+    {
+        value: "9",
+        description: "page.header.dungCuHocSinh"
+    },
+    {
+        value: "10",
+        description: "page.header.dungCuKhac"
+    },
+];
+
+export { getService, getLanguageHeaderItem, getCategoryItem };

@@ -5,7 +5,9 @@ import Search from 'antd/es/input/Search';
 import { Select } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import { DetailLists } from '../component/detaillists';
-import { getService } from './items';
+import { getCategoryItem, getService } from './items';
+import { DropdownCustom } from '../component/dropdown';
+import { useLanguage } from '../../locales/locale';
 
 interface IHeader {
 
@@ -14,12 +16,14 @@ interface IHeader {
 const { Option } = Select;
 
 export const Header: FunctionComponent<IHeader> = (props) => {
+    const { i18n } = useLanguage();
 
     const selectBefore = (
-        <Select defaultValue="http://">
-            <Option value="http://">http://</Option>
-            <Option value="https://">https://</Option>
-        </Select>
+        <DropdownCustom
+            defaultValue={"8"}
+            option={getCategoryItem}
+            className="header-dropdown-category"
+        />
     );
 
     return (
@@ -34,8 +38,8 @@ export const Header: FunctionComponent<IHeader> = (props) => {
                     <div className="header-search">
                         <Search
                             addonBefore={selectBefore}
-                            placeholder="Search entire store..."
-                            enterButton="Search"
+                            placeholder={i18n("page.header.searchEntireStore")}
+                            enterButton={i18n("page.header.search")}
                             size="large"
                             loading={false}
                             style={{ width: 800 }} />
@@ -44,22 +48,24 @@ export const Header: FunctionComponent<IHeader> = (props) => {
                         <div className="header-icon">
                             <div className="header-icon-title" style={{ width: 88 }}>
                                 <UserOutlined style={{ fontSize: 35 }} />
-                                <div className="header-icon-text">My Account</div>
+                                <div className="header-icon-text">{i18n("page.header.myAccount")}</div>
                             </div>
                             <div className="header-icon-title">
                                 <ShoppingCartOutlined style={{ fontSize: 35 }} />
                                 <span className="header-icon-count">10</span>
-                                <div className="header-icon-text">Cart</div>
+                                <div className="header-icon-text">{i18n("page.header.cart")}</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="header-category">
-                    {getService.map((item) => {
+                    {getService.map((item, index) => {
                         return (
-                            <DetailLists
-                                item={item.title}
-                            />
+                            <div key={index}>
+                                <DetailLists
+                                    item={item.title}
+                                />
+                            </div>
                         )
                     })}
                 </div>

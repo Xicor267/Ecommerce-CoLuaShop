@@ -1,11 +1,15 @@
 import './App.scss';
 import Layout from './layout/Layout';
+import { LanguageProvider } from './locales/locale';
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
-    </div>
+    <LanguageProvider>
+
+      <div className="App">
+        <Layout />
+      </div>
+    </LanguageProvider>
   );
 }
 

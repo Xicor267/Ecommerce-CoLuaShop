@@ -12,11 +12,35 @@
         .header-nav-row {
             display: flex;
             flex-direction: row;
+            align-items: center;
             gap: 16px;
         }
 
         .header-nav-dropdown {
             width: 150px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        padding: 8px 0;
+
+        .header-nav-container {
+            flex-direction: column;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .header-nav-row {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 16px;
+            }
+
+            .header-nav-dropdown {
+                width: 100%;
+            }
         }
     }
 }

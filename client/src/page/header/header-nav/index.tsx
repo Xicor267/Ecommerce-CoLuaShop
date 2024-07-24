@@ -1,29 +1,40 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { FireOutlined, PhoneOutlined, ProfileOutlined } from '@ant-design/icons';
 import { DropdownCustom } from '../../component/dropdown';
 import { CardHeader } from '../../component/card/cardheader';
 import { getLanguageHeaderItem } from '../items';
 import "./index.scss";
+import { LanguageContextType, useLanguage } from '../../../locales/locale';
 
 interface IHeaderNav {
 
 }
 
 export const HeaderNav: FunctionComponent<IHeaderNav> = (props) => {
-    const [language, setLanguage] = useState("vi")
+    const { language, setLanguage } = useLanguage();
+    const [selectedLanguage, setSelectedLanguage] = useState<string>(language);
+
+    useEffect(() => {
+        setSelectedLanguage(language);
+    }, [language]);
+
+    const handleLanguageChange = (value: string): void => {
+        setSelectedLanguage(value);
+        setLanguage(value);
+    };
 
     const getCardItem = [
         {
             icon: <ProfileOutlined />,
-            title: "Nhận báo giá rẻ hơn"
+            title: "page.header.nhanBaoGiaReHon"
         },
         {
             icon: <FireOutlined />,
-            title: "Chính sách ưu đãi"
+            title: "page.header.chinhSachUuDai"
         },
         {
             icon: <PhoneOutlined />,
-            title: "033.934.1525 (Ms. Lua)"
+            title: "page.header.msLuacontact"
         },
     ]
 
@@ -31,18 +42,21 @@ export const HeaderNav: FunctionComponent<IHeaderNav> = (props) => {
         <div className="header-nav">
             <div className="header-nav-container">
                 <div className="header-nav-row">
-                    {getCardItem.map((item) => {
+                    {getCardItem.map((item, index) => {
                         return (
-                            <CardHeader
-                                icon={item.icon}
-                                title={item.title}
-                            />
+                            <div key={index}>
+                                <CardHeader
+                                    icon={item.icon}
+                                    title={item.title}
+                                />
+                            </div>
                         )
                     })}
                 </div>
                 <DropdownCustom
-                    defaultValue={language}
+                    defaultValue={selectedLanguage}
                     option={getLanguageHeaderItem}
+                    onChange={handleLanguageChange}
                     className="header-nav-dropdown"
                 />
             </div>

@@ -1,0 +1,29 @@
+.followus-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 24px;
+    border: 1px solid rgba(5, 5, 5, 0.06);
+    border-radius: 8px;
+    background: #f8f8f8;
+
+    .followus-title {
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    .followus-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+
+        .followus-network-icon {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+}

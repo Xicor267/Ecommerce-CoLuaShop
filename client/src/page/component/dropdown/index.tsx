@@ -1,5 +1,6 @@
 import { Select } from "antd";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
+import { LanguageContextType, useLanguage } from "../../../locales/locale";
 
 interface IDropdownCustom {
     defaultValue?: string | null;
@@ -7,17 +8,27 @@ interface IDropdownCustom {
         value?: string | null;
         description?: string;
     }[];
-    className?: string
+    className?: string;
+    onChange?: (value: string) => void;
+    // onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
 }
 
 const { Option } = Select;
 
 export const DropdownCustom: FunctionComponent<IDropdownCustom> = (props) => {
+    const { i18n } = useLanguage();
+
+    const handleChange = (value: string) => {
+        if (props.onChange) {
+            props.onChange(value);
+        }
+    };
+    
     return (
-        <Select defaultValue={props.defaultValue} className={props.className}>
-            {props.option.map((item) => {
+        <Select defaultValue={props.defaultValue} onChange={handleChange} className={props.className}>
+            {props.option?.map((item, index) => {
                 return (
-                    <Option value={item.value}>{item.description}</Option>
+                    <Option value={item.value} key={index}>{i18n(item.description || '')}</Option>
                 )
             })}
         </Select>

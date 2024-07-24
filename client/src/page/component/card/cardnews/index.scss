@@ -1,0 +1,40 @@
+.cardnews-container {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .cardnews-details {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        .cardnews-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .cardnews-content-title {
+                color: #181818;
+                font-size: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #1677ff;
+                    fill: #1677ff;
+                }
+            }
+
+            .cardnews-content-text {
+                color: #8a8a8a;
+                font-size: 12px;
+                letter-spacing: 0;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

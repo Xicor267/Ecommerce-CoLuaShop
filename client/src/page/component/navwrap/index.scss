@@ -1,0 +1,41 @@
+.title-navigation-container {
+    display: flex;
+    flex-direction: column;
+
+    .title-navigation-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .navigation-buttons-title {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+
+            .navigation-buttons-title {
+                color: #181818;
+                font-size: 17px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .navigation-buttons button {
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+
+                .navigation-buttons button:hover {
+                    background-color: #e0e0e0;
+                }
+            }
+        }
+    }
+}

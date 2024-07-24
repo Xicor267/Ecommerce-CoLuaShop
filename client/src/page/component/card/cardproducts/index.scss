@@ -1,0 +1,70 @@
+.cardproduct-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .cardproduct-image {
+        text-align: center;
+    }
+
+    .cardproduct-content {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        .cardproduct-title {
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                color: #1677ff;
+                fill: #1677ff;
+            }
+        }
+
+        .cardproduct-price {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .cardproduct-price-text {
+                color: #181818;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .cardproduct-price-discount {
+                color: #fb4d01;
+                text-decoration: line-through;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .cardproduct-time {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .cardproduct-input {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        .cardproduct-input input {
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center;
+
+            &:hover {
+                color: #1677ff;
+                fill: #1677ff;
+            }
+        }
+    }
+}
