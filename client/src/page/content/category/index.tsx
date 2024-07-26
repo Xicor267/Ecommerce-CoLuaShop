@@ -1,7 +1,9 @@
 import { Menu, MenuProps } from "antd";
 import { FunctionComponent } from "react"
 import { useLanguage } from "../../../locales/locale";
+import { FcHome } from "react-icons/fc";
 import "./index.scss";
+import { Link } from "react-router-dom";
 
 interface ICategory {
 
@@ -12,6 +14,11 @@ export const Category: FunctionComponent<ICategory> = (props) => {
     const { i18n } = useLanguage();
 
     const items: MenuItem[] = [
+        {
+            key: 'sub0',
+            icon: <FcHome style={{ fontSize: "20px" }} />,
+            label: "Home",
+        },
         {
             key: 'sub1',
             icon: <img width="20" height="20" src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_128,h_128/https://vanphong-pham.com/wp-content/uploads/2021/11/folders.png" alt=""></img>,
@@ -130,7 +137,12 @@ export const Category: FunctionComponent<ICategory> = (props) => {
     ];
 
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click', e);
+        console.log('e.key', e.key)
+        if (e.key === "sub0") {
+            return <Link to={"/home"}></Link>
+        } else if (e.key === "sub1") {
+            return <Link to={"/home/page-details"}></Link>
+        }
     };
 
     return (
@@ -138,8 +150,8 @@ export const Category: FunctionComponent<ICategory> = (props) => {
             <Menu
                 onClick={onClick}
                 className="category-menu"
-                // style={{ width: 256, borderLeft: "1px solid rgba(5, 5, 5, 0.06)" }}
                 mode="vertical"
+                defaultOpenKeys={['sub0']}
                 items={items}
             />
         </div>

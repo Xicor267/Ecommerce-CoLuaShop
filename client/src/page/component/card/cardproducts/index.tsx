@@ -2,6 +2,9 @@ import { FunctionComponent } from "react";
 import { TbCurrencyDong } from "react-icons/tb";
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
+import { IoHeartOutline } from "react-icons/io5";
+import { TooltipCustom } from "../../tootip";
+import { Image } from 'antd';
 import "./index.scss";
 
 interface ICardProduct {
@@ -16,11 +19,41 @@ interface ICardProduct {
 }
 
 export const CardProduct: FunctionComponent<ICardProduct> = (props) => {
+    const handleViewImage = () => {
+        console.log("first")
+        return (
+            <Image
+                className="cardproduct-image"
+                src={props.image}
+            />
+        )
+    }
+
+    const getIcon = [
+        {
+            title: "Xem chi tiết sản phẩm",
+            color: "#1677ff",
+            content: <FaRegEye className="cardproduct-button" fontSize={20} />
+        },
+        {
+            title: "Thích sản phẩm",
+            color: "#1677ff",
+            content: <IoHeartOutline className="cardproduct-button" fontSize={20} />
+        },
+        {
+            title: "Thêm vào giỏ hàng",
+            color: "#1677ff",
+            content: <MdAddShoppingCart className="cardproduct-button" fontSize={20} />
+        },
+    ];
+
     return (
         <div className="cardproduct-container">
-            <div className="cardproduct-image">
-                <img src={props.image} style={{ width: "100%", height: "100%", borderRadius: 8 }} />
-            </div>
+            {/* <img className="cardproduct-image" src={props.image} alt="" /> */}
+            <Image
+                className="cardproduct-image"
+                src={props.image}
+            />
             <div className="cardproduct-content">
                 <div className="cardproduct-title">
                     {props.title}
@@ -71,9 +104,14 @@ export const CardProduct: FunctionComponent<ICardProduct> = (props) => {
             }
             {props.hasHoverItem &&
                 <div className="cardproduct-buttons">
-                    <FaRegEye className="cardproduct-button" fontSize={20} />
-                    <FaRegHeart className="cardproduct-button" fontSize={20} />
-                    <MdAddShoppingCart className="cardproduct-button" fontSize={20} />
+                    {getIcon.map((item, index) => (
+                        <TooltipCustom
+                            key={index}
+                            title={item.title}
+                            color={item.color}
+                            content={item.content}
+                        />
+                    ))}
                 </div>
             }
         </div>

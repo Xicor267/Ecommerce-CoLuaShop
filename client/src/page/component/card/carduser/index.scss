@@ -8,6 +8,17 @@
         border-radius: 100%;
         border: 2px solid #1677ff;
         align-items: center;
+
+        .ant-image-img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            border-radius: 100%;
+        }
+
+        .ant-image-mask {
+            border-radius: 100%;
+        }
     }
 
     .carduser-title {

@@ -1,27 +1,27 @@
-.spacialproduct-container {
+.specialproduct-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 24px;
 
-    .spacialproduct-header {
+    .specialproduct-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 9px;
 
-        .spacialproduct-buttons-title {
+        .specialproduct-buttons-title {
             font-size: 17px;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .spacialproduct-buttons {
+        .specialproduct-buttons {
             display: flex;
             gap: 10px;
 
-            .spacialproduct-buttons-icon {
+            .specialproduct-buttons-icon {
                 cursor: pointer;
                 font-size: 20;
 
@@ -33,13 +33,13 @@
         }
     }
 
-    .spacialproduct-all-card {
+    .specialproduct-all-card {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 15px;
 
-        .spacialproduct-card {
+        .specialproduct-card {
             position: relative;
             flex-basis: calc(33.33% - 10px);
             box-sizing: border-box;
@@ -62,7 +62,13 @@
                 opacity: 1;
             }
 
-            &:hover .cardproduct-image img {
+            &:hover .cardproduct-image {
+                transform: scale(1.1);
+                transition: transform 1s ease;
+            }
+
+            .ant-image-mask {
+                border-radius: 8px;
                 transform: scale(1.1);
                 transition: transform 1s ease;
             }
@@ -90,7 +96,7 @@
             .cardproduct-buttons {
                 display: none;
                 position: absolute;
-                top: 50%;
+                top: 70%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 gap: 10px;

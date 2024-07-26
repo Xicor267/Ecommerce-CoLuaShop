@@ -1,0 +1,32 @@
+.cardproductdetail-container {
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid rgba(5, 5, 5, 0.06);
+    border-radius: 8px;
+
+    .cardproductdetail-title {
+        font-weight: 700;
+        font-size: 18px;
+        color: #1677ff;
+    }
+
+    .cardproductdetail-detail {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .cardproductdetail-text {
+            width: 80%;
+            font-style: italic;
+        }
+
+        .cardproductdetail-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+        }
+    }
+}

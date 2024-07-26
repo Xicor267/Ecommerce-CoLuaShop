@@ -46,7 +46,7 @@ export const CardBrand: FunctionComponent<ICardBrand> = (props) => {
             </div>
             <div className="cardbrand-details">
                 {currentItem.map((item, index) => (
-                    <img className="cardbrand-image" src={item.image} />
+                    <img key={index} className="cardbrand-image" src={item.image} />
                 ))}
             </div>
         </div>

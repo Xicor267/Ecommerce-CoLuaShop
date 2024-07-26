@@ -28,18 +28,18 @@ export const SpecialProduct: FunctionComponent<ISpecialProduct> = (props) => {
         : [...getCardProductItem.slice(startIndex), ...getCardProductItem.slice(0, endIndex)];
 
     return (
-        <div className="spacialproduct-container">
-            <div className="spacialproduct-header">
-                <div className="spacialproduct-buttons-title">{"Special Product"}</div>
-                <div className="spacialproduct-buttons">
-                    <CgArrowLeftR onClick={handlePrevClick} className="spacialproduct-buttons-icon" fontSize={20} />
-                    <CgArrowRightR onClick={handleNextClick} className="spacialproduct-buttons-icon" fontSize={20} />
+        <div className="specialproduct-container">
+            <div className="specialproduct-header">
+                <div className="specialproduct-buttons-title">{"Special Product"}</div>
+                <div className="specialproduct-buttons">
+                    <CgArrowLeftR onClick={handlePrevClick} className="specialproduct-buttons-icon" fontSize={20} />
+                    <CgArrowRightR onClick={handleNextClick} className="specialproduct-buttons-icon" fontSize={20} />
                 </div>
             </div>
-            <div className="spacialproduct-all-card">
+            <div className="specialproduct-all-card">
                 {currentItem.map((item, index) => {
                     return (
-                        <div className="spacialproduct-card">
+                        <div className="specialproduct-card">
                             <CardProduct
                                 key={index}
                                 image={item.image}

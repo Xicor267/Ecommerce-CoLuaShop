@@ -1,0 +1,13 @@
+.breadcrumb-container {
+    padding: 10px;
+    border: 1px solid rgba(5, 5, 5, 0.06);
+    border-radius: 8px;
+    background: #f8f8f8;
+    margin-bottom: 24px;
+
+    .breadcrumb-item {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}

@@ -8,6 +8,10 @@
         padding-bottom: 0;
     }
 
+    .ant-image-mask {
+        border-radius: 8px;
+    }
+
     .cardnews-details {
         display: flex;
         flex-direction: row;
@@ -20,7 +24,7 @@
 
             .cardnews-content-title {
                 color: #181818;
-                font-size: 12px;
+                font-size: 14px;
                 cursor: pointer;
 
                 &:hover {

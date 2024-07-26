@@ -1,0 +1,109 @@
+.cardproductcolumn-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    position: relative;
+
+    .cardproductcolumn-image {
+        text-align: center;
+        border: 1px solid #1677ff;
+        width: 210px;
+        height: 210px;
+        border-radius: 8px;
+    }
+
+    .cardproductcolumn-content {
+        display: flex;
+        flex-direction: column;
+        padding: 20;
+        gap: 16px;
+
+        .cardproductcolumn-title {
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                color: #1677ff;
+                fill: #1677ff;
+            }
+        }
+
+        .cardproductcolumn-price {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .cardproductcolumn-price-text {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #181818;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .cardproductcolumn-price-discount {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #fb4d01;
+                text-decoration: line-through;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+
+        .cardproductcolumn-price-desc {
+            color: #909090;
+            font-style: italic;
+        }
+
+        .cardproductcolumn-buttons {
+            display: flex;
+            gap: 16px;
+
+            // .cardproductcolumn-button {
+            //     background-color: #fff;
+            //     border: 1px solid #ddd;
+            //     border-radius: 4px;
+            //     padding: 5px 10px;
+            //     cursor: pointer;
+            //     transition: background-color 0.3s;
+                
+            //     &:hover {
+            //         background-color: #f0f0f0;
+            //         color: #1677ff;
+            //     }
+            // }
+
+        }
+
+        .cardproductcolumn-sale {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 48px;
+            height: 42px;
+            text-align: center;
+            background-color: rgba(255, 216, 57, 0.9);
+            color: #ee4d2d;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-width: 0px 24px 6px;
+                top: 100%;
+                border-color: transparent rgba(255, 216, 57, 0.9) transparent rgba(255, 216, 57, 0.9);
+                border-style: solid;
+                left: 0;
+            }
+        }
+    }
+
+}

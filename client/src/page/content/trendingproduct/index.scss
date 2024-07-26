@@ -62,7 +62,13 @@
                 opacity: 1;
             }
 
-            &:hover .cardproduct-image img {
+            &:hover .cardproduct-image {
+                transform: scale(1.1);
+                transition: transform 1s ease;
+            }
+
+            .ant-image-mask {
+                border-radius: 8px;
                 transform: scale(1.1);
                 transition: transform 1s ease;
             }
@@ -90,7 +96,7 @@
             .cardproduct-buttons {
                 display: none;
                 position: absolute;
-                top: 50%;
+                top: 70%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 gap: 10px;

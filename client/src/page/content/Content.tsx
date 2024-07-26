@@ -11,12 +11,15 @@ import { OurBrands } from "./ourbrands";
 import { TrendingProduct } from "./trendingproduct";
 import { CarouselOne } from "./carousel/carouselone";
 import { SpecialProduct } from "./specialproduct";
+import { Breadcrumbs } from "../component/breadcrumb";
+import { PageDetails } from "../component/pagedetails";
 
 interface IContent {
 
 }
 
 export const Content: FunctionComponent<IContent> = (props) => {
+
     return (
         <div className="content-container">
             <Row >
@@ -38,6 +41,11 @@ export const Content: FunctionComponent<IContent> = (props) => {
                     </div>
                 </Col>
                 <Col className="content-right" span={18}>
+                    {window.location.href === "/page-details" &&
+                        <div className="content-page-details">
+                            <PageDetails />
+                        </div>
+                    }
                     <div className="content-carousel">
                         <CarouselCustom />
                     </div>
