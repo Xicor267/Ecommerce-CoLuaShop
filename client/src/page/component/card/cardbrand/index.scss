@@ -35,19 +35,40 @@
         }
     }
 
+    .cardbrand-slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
     .cardbrand-details {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
         gap: 8px;
-        
+        width: 100%;
+        animation: slide 20s infinite linear;
+        white-space: nowrap;
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
         .cardbrand-image {
-            width: calc((100% / 4) - 8px);
-            height: 150px;
+            width: calc(100% / 4);
+            height: 100%;
             background-color: #fff;
             border-radius: 8px;
             border: 1px solid #999;
+            flex-shrink: 0;
         }
     }
+
+
 
 }
