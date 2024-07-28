@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ecommerce-CoLuaShop/static/css/main.43595278.css",
-    "main.js": "/Ecommerce-CoLuaShop/static/js/main.619c0bc3.js",
+    "main.js": "/Ecommerce-CoLuaShop/static/js/main.b29e50db.js",
     "static/js/453.419a5d54.chunk.js": "/Ecommerce-CoLuaShop/static/js/453.419a5d54.chunk.js",
     "static/media/avatar.png": "/Ecommerce-CoLuaShop/static/media/avatar.ce53b30362001ef2ba84.png",
     "static/media/call_15047651.png": "/Ecommerce-CoLuaShop/static/media/call_15047651.28dbf92b99c8094d502e.png",
@@ -10,11 +10,11 @@
     "static/media/play_15047677.png": "/Ecommerce-CoLuaShop/static/media/play_15047677.ad47dac718c15f3ccdd0.png",
     "index.html": "/Ecommerce-CoLuaShop/index.html",
     "main.43595278.css.map": "/Ecommerce-CoLuaShop/static/css/main.43595278.css.map",
-    "main.619c0bc3.js.map": "/Ecommerce-CoLuaShop/static/js/main.619c0bc3.js.map",
+    "main.b29e50db.js.map": "/Ecommerce-CoLuaShop/static/js/main.b29e50db.js.map",
     "453.419a5d54.chunk.js.map": "/Ecommerce-CoLuaShop/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43595278.css",
-    "static/js/main.619c0bc3.js"
+    "static/js/main.b29e50db.js"
   ]
 }
