@@ -3,7 +3,7 @@ import { FunctionComponent } from "react"
 import { useLanguage } from "../../../locales/locale";
 import { FcHome } from "react-icons/fc";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface ICategory {
 
@@ -12,6 +12,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 export const Category: FunctionComponent<ICategory> = (props) => {
     const { i18n } = useLanguage();
+    const navigate = useNavigate();
 
     const items: MenuItem[] = [
         {
@@ -66,20 +67,10 @@ export const Category: FunctionComponent<ICategory> = (props) => {
             children: [
                 {
                     key: '9-1',
-                    label: 'Item 1',
+                    label: i18n("page.header.doChoiTreEm"),
                     type: 'group',
                     children: [
-                        { key: 'sub9-1', label: 'Option 1' },
-                        { key: 'sub9-2', label: 'Option 2' },
-                    ],
-                },
-                {
-                    key: '9-2',
-                    label: 'Item 2',
-                    type: 'group',
-                    children: [
-                        { key: 'sub9-3', label: 'Option 3' },
-                        { key: 'sub9-4', label: 'Option 4' },
+                        { key: 'sub9', label: 'Đất nặn' },
                     ],
                 },
             ],
@@ -91,22 +82,13 @@ export const Category: FunctionComponent<ICategory> = (props) => {
             children: [
                 {
                     key: '10-1',
-                    label: 'Item 1',
+                    label: i18n("page.header.dungCuHocSinh"),
                     type: 'group',
                     children: [
-                        { key: 'sub10-1', label: 'Option 1' },
-                        { key: 'sub10-2', label: 'Option 2' },
+                        { key: 'sub10', label: 'Tổng hợp đồ dụng cụ học sinh' },
                     ],
                 },
-                {
-                    key: '10-2',
-                    label: 'Item 2',
-                    type: 'group',
-                    children: [
-                        { key: 'sub10-3', label: 'Option 3' },
-                        { key: 'sub10-4', label: 'Option 4' },
-                    ],
-                },
+
             ],
         },
         {
@@ -116,32 +98,35 @@ export const Category: FunctionComponent<ICategory> = (props) => {
             children: [
                 {
                     key: '11-1',
-                    label: 'Item 1',
+                    label: i18n("page.header.dungCuHocSinh"),
                     type: 'group',
                     children: [
-                        { key: 'sub11-1', label: 'Option 1' },
-                        { key: 'sub11-2', label: 'Option 2' },
-                    ],
-                },
-                {
-                    key: '11-2',
-                    label: 'Item 2',
-                    type: 'group',
-                    children: [
-                        { key: 'sub11-3', label: 'Option 3' },
-                        { key: 'sub11-4', label: 'Option 4' },
+                        { key: 'sub11', label: 'Đồ văn phòng' },
                     ],
                 },
             ],
         },
     ];
 
+    const keyToPageMap = {
+        'sub0': '/',
+        'sub1': '/page-details/biaHoSo',
+        'sub2': '/page-details/butThuoc',
+        'sub3': '/page-details/so',
+        'sub4': '/page-details/bangKeo',
+        'sub5': '/page-details/bangTenDayDeo',
+        'sub6': '/page-details/keTaiLieu',
+        'sub7': '/page-details/hopDauMucDau',
+        'sub8': '/page-details/hinhDan',
+        'sub9': '/page-details/doChoiTreEm',
+        'sub10': '/page-details/dungCuHocSinh',
+        'sub11': '/page-details/dungCuKhac',
+    };
+
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('e.key', e.key)
-        if (e.key === "sub0") {
-            return <Link to={"/home"}></Link>
-        } else if (e.key === "sub1") {
-            return <Link to={"/home/page-details"}></Link>
+        const path = keyToPageMap[e.key as keyof typeof keyToPageMap];
+        if (path) {
+            navigate(path);
         }
     };
 

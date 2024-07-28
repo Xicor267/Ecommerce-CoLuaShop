@@ -13,16 +13,20 @@ import { CarouselOne } from "./carousel/carouselone";
 import { SpecialProduct } from "./specialproduct";
 import { Breadcrumbs } from "../component/breadcrumb";
 import { PageDetails } from "../component/pagedetails";
+import { Outlet, useLocation } from "react-router-dom";
 
 interface IContent {
 
 }
 
 export const Content: FunctionComponent<IContent> = (props) => {
+    const location = useLocation();
+
+    console.log('location', location);
 
     return (
         <div className="content-container">
-            <Row >
+            <Row>
                 <Col span={6}>
                     <div className="content-category">
                         <Category />
@@ -41,23 +45,24 @@ export const Content: FunctionComponent<IContent> = (props) => {
                     </div>
                 </Col>
                 <Col className="content-right" span={18}>
-                    {window.location.href === "/page-details" &&
-                        <div className="content-page-details">
-                            <PageDetails />
-                        </div>
-                    }
-                    <div className="content-carousel">
-                        <CarouselCustom />
-                    </div>
-                    <div className="content-trending-product">
-                        <TrendingProduct />
-                    </div>
-                    <div className="content-carousel-one">
-                        <CarouselOne />
-                    </div>
-                    <div className="content-special-product">
-                        <SpecialProduct />
-                    </div>
+                    {location.pathname.includes("/page-details/") ? (
+                        <Outlet />
+                    ) : (
+                        <>
+                            <div className="content-carousel">
+                                <CarouselCustom />
+                            </div>
+                            <div className="content-trending-product">
+                                <TrendingProduct />
+                            </div>
+                            <div className="content-carousel-one">
+                                <CarouselOne />
+                            </div>
+                            <div className="content-special-product">
+                                <SpecialProduct />
+                            </div>
+                        </>
+                    )}
                 </Col>
             </Row>
             <Row className="content-our-brands">
@@ -66,23 +71,5 @@ export const Content: FunctionComponent<IContent> = (props) => {
                 </Col>
             </Row>
         </div>
-        // <div  >
-        //     <div className="content-column-first">
-        //         <div className="content-category">
-        //             <Category />
-        //         </div>
-        //         <div className="content-news">
-        //             <News />
-        //         </div>
-        //         <div className="content-discount">
-        //             <Discount />
-        //         </div>
-        //     </div>
-        //     <div className="content-column-second">
-        //         <div className="content-carousel">
-        //             {/* <CarouselCustom /> */}
-        //         </div>
-        //     </div>
-        // </div>
-    )
+    );
 }

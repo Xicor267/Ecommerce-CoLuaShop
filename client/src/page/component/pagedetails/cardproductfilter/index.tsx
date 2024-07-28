@@ -1,20 +1,76 @@
 import { FunctionComponent, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { PiListBulletsBold } from "react-icons/pi";
-import "./index.scss";
 import { Button, Dropdown, MenuProps } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { getCardProductItem } from "../../../content/discount/items";
 import { CardProductColumn } from "../../card/cardproducts/cardproductrow";
 import { FcAlphabeticalSortingAz, FcAlphabeticalSortingZa, FcGenericSortingAsc, FcGenericSortingDesc } from "react-icons/fc";
 import { CardProduct } from "../../card/cardproducts";
+import { getBangKeo, getBangTenDayDeo, getBiaHoSo, getButThuoc, getDoChoiTreEm, getDungCuHocSinh, getDungCuKhac, getHinhDan, getHopDauMucDau, getKeTaiLieu, getSo } from "../../../mockup/product/getDropdownItem";
+import { useParams } from "react-router-dom";
+import "./index.scss";
+import { CardProductDetail } from "../cardproductdetail";
+import { getCardBangKeo, getCardBangTenDayDeo, getCardBiaHoSo, getCardButThuoc, getCardDoChoiTreEm, getCardDungCuHocSinh, getCardDungCuKhac, getCardHinhDan, getCardHopDauMucDau, getCardKeTaiLieu, getCardSo } from "../../../mockup/getCardProductDetail";
 
 interface ICardProductFilter {
 
 }
 
+//config router
+const dataMap: { [key: string]: any } = {
+    biaHoSo: {
+        data: getBiaHoSo,
+        cardData: getCardBiaHoSo,
+    },
+    butThuoc: {
+        data: getButThuoc,
+        cardData: getCardButThuoc,
+    },
+    so: {
+        data: getSo,
+        cardData: getCardSo,
+    },
+    bangKeo: {
+        data: getBangKeo,
+        cardData: getCardBangKeo,
+    },
+    bangTenDayDeo: {
+        data: getBangTenDayDeo,
+        cardData: getCardBangTenDayDeo,
+    },
+    keTaiLieu: {
+        data: getKeTaiLieu,
+        cardData: getCardKeTaiLieu,
+    },
+    hopDauMucDau: {
+        data: getHopDauMucDau,
+        cardData: getCardHopDauMucDau,
+    },
+    hinhDan: {
+        data: getHinhDan,
+        cardData: getCardHinhDan,
+    },
+    doChoiTreEm: {
+        data: getDoChoiTreEm,
+        cardData: getCardDoChoiTreEm,
+    },
+    dungCuHocSinh: {
+        data: getDungCuHocSinh,
+        cardData: getCardDungCuHocSinh,
+    },
+    dungCuKhac: {
+        data: getDungCuKhac,
+        cardData: getCardDungCuKhac,
+    }
+};
+
 export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) => {
     const [viewMode, setViewMode] = useState('grid'); //list or grid
+    const { category } = useParams<{ category: string }>();
+
+    const data = category && dataMap[category] ? dataMap[category].data : [];
+    const cardData = category && dataMap[category] ? dataMap[category].cardData : [];
 
     const handleMenuClick: MenuProps['onClick'] = (e) => {
         console.log('click', e);
@@ -73,7 +129,7 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
     const handleViewProductRow = () => {
         return (
             <div className="cardproductfilter-all-card-row">
-                {getCardProductItem.map((item, index) => {
+                {data.map((item: any, index: number) => {
                     return (
                         <div className="cardproductfilter-card-row">
                             <CardProduct
@@ -94,6 +150,16 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
 
     return (
         <div className="cardproductfilter-container">
+            <div className="cardproductfilter-card-details">
+                {cardData.map((item: any, index: number) => (
+                    <CardProductDetail
+                        key={index}
+                        title={item.title}
+                        text={item.text}
+                        image={item.image}
+                    />
+                ))}
+            </div>
             <div className="cardproductfilter-nav">
                 <div className="cardproductfilter-icon">
                     <CgMenuGridR

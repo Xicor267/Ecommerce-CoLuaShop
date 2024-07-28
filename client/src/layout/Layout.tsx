@@ -7,6 +7,7 @@ import { CopyRight } from '../page/footer/copyright';
 import { MapCustom } from '../page/footer/map';
 import { facebook, messenger, youtube, phone } from "../assets/image";
 import "./Layout.scss";
+import { Outlet } from 'react-router-dom';
 
 interface ILayout {
     children?: ReactNode
@@ -14,8 +15,6 @@ interface ILayout {
 
 export const Layout: FunctionComponent<ILayout> = (props) => {
     const { children } = props;
-
-    console.log('window.location.href', window.location.href)
 
     return (
         <div className="layout-container">
