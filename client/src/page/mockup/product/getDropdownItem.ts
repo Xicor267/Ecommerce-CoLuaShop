@@ -576,9 +576,11 @@ const getHopDauMucDau = [
     }
 ]
 
-const getHinhDan = [{
-    title: "Nhieu hang chua kip show - Are you clear?"
-}]
+const getHinhDan: never[] = [
+    // {
+    //     title: "Nhieu hang chua kip show - Are you clear?"
+    // }
+]
 
 const getDoChoiTreEm = [
     {

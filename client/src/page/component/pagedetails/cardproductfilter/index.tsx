@@ -1,7 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { PiListBulletsBold } from "react-icons/pi";
-import { Button, Dropdown, MenuProps } from "antd";
+import { Button, Dropdown, MenuProps, Pagination, PaginationProps } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { getCardProductItem } from "../../../content/discount/items";
 import { CardProductColumn } from "../../card/cardproducts/cardproductrow";
@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import "./index.scss";
 import { CardProductDetail } from "../cardproductdetail";
 import { getCardBangKeo, getCardBangTenDayDeo, getCardBiaHoSo, getCardButThuoc, getCardDoChoiTreEm, getCardDungCuHocSinh, getCardDungCuKhac, getCardHinhDan, getCardHopDauMucDau, getCardKeTaiLieu, getCardSo } from "../../../mockup/getCardProductDetail";
+import { NoData } from "../../nodata";
 
 interface ICardProductFilter {
 
@@ -71,6 +72,30 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
 
     const data = category && dataMap[category] ? dataMap[category].data : [];
     const cardData = category && dataMap[category] ? dataMap[category].cardData : [];
+    const [currentPage, setCurrentPage] = useState(0);
+    const perPage = 12;
+
+    const onChange: PaginationProps['onChange'] = (pageNumber) => {
+        if (pageNumber === 1) {
+            setCurrentPage((prev) => (prev - 1 + Math.ceil(data.length / perPage)) % Math.ceil(data.length / perPage));
+        } else {
+            setCurrentPage((prev) => (prev + 1) % Math.ceil(data.length / perPage));
+        }
+    };
+
+    const startIndex = currentPage * perPage;
+    const endIndex = startIndex + perPage;
+    const currentItem = data.slice(startIndex, endIndex);
+
+    const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
+        if (type === 'prev') {
+            return <a>Previous</a>;
+        }
+        if (type === 'next') {
+            return <a>Next</a>;
+        }
+        return originalElement;
+    };
 
     const handleMenuClick: MenuProps['onClick'] = (e) => {
         console.log('click', e);
@@ -129,7 +154,7 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
     const handleViewProductRow = () => {
         return (
             <div className="cardproductfilter-all-card-row">
-                {data.map((item: any, index: number) => {
+                {currentItem.map((item: any, index: number) => {
                     return (
                         <div className="cardproductfilter-card-row">
                             <CardProduct
@@ -185,9 +210,21 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
                     </Dropdown>
                 </div>
             </div>
-            {viewMode === 'list' ? handleViewProductColumn() : handleViewProductRow()}
+            {!data.length ? <NoData /> : (viewMode === 'list' ? handleViewProductColumn() : handleViewProductRow())}
             <div className="cardproductfilter-quantity">
-                Showing 1 - {getCardProductItem.length} of {getCardProductItem.length} item(s)
+                <div className="cardproductfilter-quantity-text">
+                    Showing {currentItem.length} - {data.length} of {data.length} item(s)
+                </div>
+                <Pagination
+                    // showSizeChanger
+                    showQuickJumper
+                    defaultCurrent={1}
+                    pageSize={perPage}
+                    // pageSizeOptions={[6, 10, 20]}
+                    total={data.length}
+                    onChange={onChange}
+                    itemRender={itemRender}
+                />
             </div>
         </div>
     )
