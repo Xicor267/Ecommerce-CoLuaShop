@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { getCardProductItem } from "../discount/items";
 import { CardProduct } from "../../component/card/cardproducts";
 import { CgArrowLeftR, CgArrowRightR } from "react-icons/cg";

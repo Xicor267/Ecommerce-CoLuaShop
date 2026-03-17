@@ -22,6 +22,7 @@ export const CardFooter: FunctionComponent<ICardFooter> = (props) => {
                             className="cardfooter-desc-url"
                             href={item.href}
                             target="_blank"
+                            rel="noreferrer"
                             key={index}
                         >{item.content}</a>
                     ))}

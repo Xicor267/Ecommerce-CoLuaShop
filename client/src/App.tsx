@@ -1,6 +1,5 @@
 import './App.scss';
 import Layout from './layout/Layout';
-import { Content } from './page/content/Content';
 import { PageDetails } from './page/component/pagedetails';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { TbCurrencyDong } from "react-icons/tb";
-import { FaRegEye, FaRegHeart } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoHeartOutline } from "react-icons/io5";
 import { TooltipCustom } from "../../tootip";
@@ -19,16 +19,6 @@ interface ICardProduct {
 }
 
 export const CardProduct: FunctionComponent<ICardProduct> = (props) => {
-    const handleViewImage = () => {
-        console.log("first")
-        return (
-            <Image
-                className="cardproduct-image"
-                src={props.image}
-            />
-        )
-    }
-
     const getIcon = [
         {
             title: "Xem chi tiết sản phẩm",

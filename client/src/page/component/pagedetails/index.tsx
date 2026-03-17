@@ -1,7 +1,5 @@
 import { FunctionComponent } from "react";
 import { Breadcrumbs } from "../breadcrumb";
-import { CardProductDetail } from "./cardproductdetail";
-import { getCardBiaHoSo } from "../../mockup/getCardProductDetail";
 import { CardProductFilter } from "./cardproductfilter";
 import "./index.scss";
 

@@ -13,10 +13,10 @@ export const FollowUs: FunctionComponent<IFollowUs> = (props) => {
                 Follow us
             </div>
             <div className="followus-network">
-                <a href="https://www.facebook.com/lua.nguyenthi.3975" target="_blank"><FacebookFilled className="followus-network-icon"/></a>
-                <a href="https://www.youtube.com/channel/UC7sH7UkomGQONKgcmtGCc8w" target="_blank"><YoutubeFilled className="followus-network-icon"/></a>
-                <a href="/" target="_blank"><InstagramFilled className="followus-network-icon"/></a>
-                <a href="/" target="_blank"><SkypeFilled className="followus-network-icon"/></a>
+                <a href="https://www.facebook.com/lua.nguyenthi.3975" target="_blank" rel="noreferrer"><FacebookFilled className="followus-network-icon"/></a>
+                <a href="https://www.youtube.com/channel/UC7sH7UkomGQONKgcmtGCc8w" target="_blank" rel="noreferrer"><YoutubeFilled className="followus-network-icon"/></a>
+                <a href="/" target="_blank" rel="noreferrer"><InstagramFilled className="followus-network-icon"/></a>
+                <a href="/" target="_blank" rel="noreferrer"><SkypeFilled className="followus-network-icon"/></a>
             </div>
         </div>
     )

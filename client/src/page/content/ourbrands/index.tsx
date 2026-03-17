@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import "./index.scss";
-import { PaginationHeader } from "../../component/navwrap";
 import { getBrandItem } from "./items";
 import { CardBrand } from "../../component/card/cardbrand";
 

@@ -89,10 +89,10 @@ export const CardProductFilter: FunctionComponent<ICardProductFilter> = (props) 
 
     const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
         if (type === 'prev') {
-            return <a>Previous</a>;
+            return <a href="#prev">Previous</a>;
         }
         if (type === 'next') {
-            return <a>Next</a>;
+            return <a href="#next">Next</a>;
         }
         return originalElement;
     };

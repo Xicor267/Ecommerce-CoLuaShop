@@ -11,9 +11,7 @@ import { OurBrands } from "./ourbrands";
 import { TrendingProduct } from "./trendingproduct";
 import { CarouselOne } from "./carousel/carouselone";
 import { SpecialProduct } from "./specialproduct";
-import { Breadcrumbs } from "../component/breadcrumb";
-import { PageDetails } from "../component/pagedetails";
-import { Outlet, useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 
 interface IContent {
 

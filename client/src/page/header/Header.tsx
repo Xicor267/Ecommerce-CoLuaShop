@@ -1,19 +1,16 @@
-import React, { FunctionComponent, useEffect } from 'react';
-import avatarLogo from "../../assets/image/avatar.png";
-import "./Header.scss";
 import Search from 'antd/es/input/Search';
-import { Select } from 'antd';
-import { DetailLists } from '../component/detaillists';
-import { getCategoryItem, getService } from './items';
-import { DropdownCustom } from '../component/dropdown';
-import { useLanguage } from '../../locales/locale';
+import { FunctionComponent } from 'react';
 import { FaRegUserCircle, FaShoppingCart } from 'react-icons/fa';
+import avatarLogo from "../../assets/image/avatar.png";
+import { useLanguage } from '../../locales/locale';
+import { DetailLists } from '../component/detaillists';
+import { DropdownCustom } from '../component/dropdown';
+import "./Header.scss";
+import { getCategoryItem, getService } from './items';
 
 interface IHeader {
 
 }
-
-const { Option } = Select;
 
 export const Header: FunctionComponent<IHeader> = (props) => {
     const { i18n } = useLanguage();
@@ -31,8 +28,8 @@ export const Header: FunctionComponent<IHeader> = (props) => {
             <div className="header-top">
                 <div className="header-row">
                     <div className="header-logo">
-                        <a href="https://www.facebook.com/lua.nguyenthi.3975" target="_blank">
-                            <img src={avatarLogo} alt={"Co Lua image"} style={{ width: 190, height: 110 }} />
+                        <a href="https://www.facebook.com/lua.nguyenthi.3975" target="_blank" rel="noreferrer">
+                            <img src={avatarLogo} alt="Co Lua Shop" style={{ width: 190, height: 110 }} />
                         </a>
                     </div>
                     <div className="header-search">

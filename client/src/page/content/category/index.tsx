@@ -3,7 +3,7 @@ import { FunctionComponent } from "react"
 import { useLanguage } from "../../../locales/locale";
 import { FcHome } from "react-icons/fc";
 import "./index.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface ICategory {
 

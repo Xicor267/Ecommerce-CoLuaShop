@@ -9,11 +9,11 @@ interface ICopyRight {
 }
 
 export const CopyRight: FunctionComponent<ICopyRight> = () => {
-    const [date, setDate] = useState(new Date);
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setDate(new Date);
+            setDate(new Date());
         }, 5000);
 
         return () => clearInterval(intervalId);
@@ -28,7 +28,7 @@ export const CopyRight: FunctionComponent<ICopyRight> = () => {
                 <FaCcVisa fontSize={20} className="copyright-icon-pay"/>
                 <FaCcMastercard fontSize={20} className="copyright-icon-pay"/>
                 <FaCcPaypal fontSize={20} className="copyright-icon-pay"/>
-                <HiBanknotes fontSize={20} className="copyright-icon-pay"/>
+                <HiBanknotes fontSize={20} className="copyright-icon-pay" />
             </div>
         </div>
     )

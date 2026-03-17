@@ -4,7 +4,7 @@ import { DropdownCustom } from '../../component/dropdown';
 import { CardHeader } from '../../component/card/cardheader';
 import { getLanguageHeaderItem } from '../items';
 import "./index.scss";
-import { LanguageContextType, useLanguage } from '../../../locales/locale';
+import { useLanguage } from '../../../locales/locale';
 
 interface IHeaderNav {
 

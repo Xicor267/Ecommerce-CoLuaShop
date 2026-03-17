@@ -1,6 +1,6 @@
 import { Select } from "antd";
-import { FunctionComponent, useEffect } from "react";
-import { LanguageContextType, useLanguage } from "../../../locales/locale";
+import { FunctionComponent } from "react";
+import { useLanguage } from "../../../locales/locale";
 
 interface IDropdownCustom {
     defaultValue?: string | null;

@@ -8,14 +8,14 @@ interface ICarousel {
 
 }
 export const CarouselCustom: FunctionComponent<ICarousel> = (props) => {
-    const { i18n } = useLanguage();
+    useLanguage();
 
     return (
         <div className="carousel-container">
             <Carousel arrows autoplay>
                 {getCarouselImage.map((item, index) => (
                     <div key={index}>
-                        <img src={item.image} className="carousel-image" />
+                        <img src={item.image} className="carousel-image" alt={`Carousel slide ${index}`} />
                     </div>
                 ))}
             </Carousel>

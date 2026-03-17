@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { TbCurrencyDong } from "react-icons/tb";
-import { FaRegEye, FaRegHeart } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoHeartOutline } from "react-icons/io5";
 import { TooltipCustom } from "../../../tootip";

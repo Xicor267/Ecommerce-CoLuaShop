@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import "./index.scss";
 import { CardNews } from "../../component/card/cardnews";
 import { getCardNewsItem } from "./items";
