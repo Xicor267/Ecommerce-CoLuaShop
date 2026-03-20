@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { Image } from 'antd';
 import "./index.scss";
+import { imageSetting } from "../../../../helper";
 
 interface ICardUser {
     image?: string;
@@ -13,7 +14,7 @@ export const CardUser: FunctionComponent<ICardUser> = (props) => {
     return (
         <div className="carduser-container">
             <div className="" style={{textAlign: "center"}}>
-                <Image rootClassName="carduser-image" src={props.image} alt="" />
+                <Image rootClassName="carduser-image" src={imageSetting(props.image as any)} alt="" />
             </div>
             <div className="carduser-title">
                 {props.name}

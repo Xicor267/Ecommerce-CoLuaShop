@@ -22,8 +22,8 @@ export const Content: FunctionComponent<IContent> = (props) => {
 
     return (
         <div className="content-container">
-            <Row>
-                <Col span={6}>
+            <Row gutter={[0, 24]} className="content-main-row">
+                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 8 }} lg={{ span: 6 }} className="content-left">
                     <div className="content-category">
                         <Category />
                     </div>
@@ -40,7 +40,7 @@ export const Content: FunctionComponent<IContent> = (props) => {
                         <FollowUs />
                     </div>
                 </Col>
-                <Col className="content-right" span={18}>
+                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 16 }} lg={{ span: 18 }} className="content-right">
                     {location.pathname.includes("/page-details/") ? (
                         <Outlet />
                     ) : (

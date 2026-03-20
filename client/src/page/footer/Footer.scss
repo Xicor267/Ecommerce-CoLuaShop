@@ -1,12 +1,27 @@
 .footer-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
     gap: 24px;
-    margin: 24px 90px 0 90px;
     padding-left: 15px;
     padding-right: 15px;
     border-bottom: 1px solid #dcdcdc;
+
+    // Mobile-first: vertical stacking, no margin
+    margin: 24px 0 0 0;
+
+    // Tablet and up: add horizontal margin
+    @media (min-width: 768px) {
+        margin: 24px 30px 0 30px;
+    }
+
+    // Desktop: larger margin, switch to horizontal
+    @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 24px 90px 0 90px;
+    }
 
     .footer-form {
         margin-top: 16px;

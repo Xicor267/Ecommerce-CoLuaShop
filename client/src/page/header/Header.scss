@@ -4,9 +4,23 @@
     margin-bottom: 24px;
 
     .header-top {
-        margin: 0 90px;
+        width: 100%;
+        box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
+        
+        // Mobile-first: no margin
+        margin: 0;
+
+        // Tablet and up: add horizontal margin
+        @media (min-width: 768px) {
+            margin: 0 30px;
+        }
+
+        // Desktop: larger margin
+        @media (min-width: 1200px) {
+            margin: 0 90px;
+        }
 
         .header-row {
             display: flex;
@@ -84,13 +98,12 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .header-container {
         padding: 10px 0;
         margin-bottom: 20px;
 
         .header-top {
-            margin: 0 20px;
             padding: 0 10px;
 
             .header-row {

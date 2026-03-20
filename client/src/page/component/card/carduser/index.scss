@@ -3,8 +3,10 @@
     flex-direction: column;
 
     .carduser-image {
-        width: 100px;
-        height: 100px;
+        // Mobile-first: 130px
+        width: 130px;
+        height: 130px;
+        
         border-radius: 100%;
         border: 2px solid #1677ff;
         align-items: center;

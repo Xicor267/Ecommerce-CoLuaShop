@@ -4,12 +4,53 @@
     // gap: 24px;
     // width: 100%;
     // height: 100%;
-    margin: 0 90px;
+    width: 100%;
+    box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
 
-    .content-right {
-        padding-left: 24px;
+    // Mobile-first: no horizontal margin
+    margin: 0;
+
+    // Tablet and up: add horizontal margin
+    @media (min-width: 768px) {
+        margin: 0 30px;
+    }
+
+    // Desktop: larger margin
+    @media (min-width: 1200px) {
+        margin: 0 90px;
+    }
+
+    .content-main-row {
+        width: 100%;
         box-sizing: border-box;
+    }
+
+    .content-left {
+        // Mobile: no additional padding
+        padding: 0;
+        margin-bottom: 24px;
+
+        // Tablet and up: no bottom margin
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
+
+    .content-right {
+        // Mobile: no additional padding
+        padding: 0;
+        box-sizing: border-box;
+
+        // Tablet and up: add left padding
+        @media (min-width: 768px) {
+            padding-left: 24px;
+        }
+    }
+
+    .content-our-brands {
+        width: 100%;
+        margin-top: 24px;
     }
 }
